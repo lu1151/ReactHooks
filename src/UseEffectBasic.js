@@ -1,24 +1,25 @@
 import React, { useState, useEffect } from "react";
 
-function useCount(params) {
-    const [count, setCount] = useState(0);
-
-    return [count, () => {
-        setCount(count + 1);
-    }]
+function useInterval(callback, time) {
+    useEffect(() => {
+        const I = setInterval(callback, time);
+        return () => {
+            clearInterval(I);
+        }
+    }, [])
 }
 
 export default () => {
-    const [count, addCount] = useCount(0);
+    const [count, setCount] = useState(0);
 
-    useEffect(() => {
-        console.log(`You clicked count ${count} times.`);
-    });
+    useInterval(() => {
+        setCount(count => count + 1);
+    }, 1000);
 
     return (
         <div>
             Your Count: {count}
-            <button onClick={() => addCount(count + 1)}>Add</button>
+            <button onClick={() => setCount(count + 1)}>Add</button>
         </div>
     )
 }
