@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function useCount(params) {
     const [count, setCount] = useState(0);
@@ -10,6 +10,10 @@ function useCount(params) {
 
 export default () => {
     const [count, addCount] = useCount(0);
+
+    useEffect(() => {
+        console.log(`You clicked count ${count} times.`);
+    });
 
     return (
         <div>
