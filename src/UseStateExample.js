@@ -1,12 +1,21 @@
 import React, { useState } from "react";
 
-export default () => {
+function useCount(params) {
     const [count, setCount] = useState(0);
+
+    return [count, () => {
+        setCount(count + 1);
+    }]
+
+}
+
+export default () => {
+    const [count, addCount] = useCount(0);
 
     return (
         <div>
             Your Count: {count}
-            <button onClick={() => setCount(count + 1)}>Add</button>
+            <button onClick={() => addCount(count + 1)}>Add</button>
         </div>
     )
 }
