@@ -9,7 +9,6 @@ import RefExample from "./RefExample"
 function App() {
   return (
     <div>
-      <Counter />
       <RefExample />
     </div>
   );
