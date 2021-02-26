@@ -7,11 +7,12 @@ import Counter from "./ReducerExample"
 import RefExample from "./RefExample"
 import UseCallback from "./UseCallbackExample";
 import Sync from './SyncExample'
+import Hook from "./HooksExample";
 
 function App() {
   return (
     <div>
-      <Sync />
+      <Hook />
     </div>
   );
 }
