@@ -5,11 +5,12 @@ import UseEffectBasic from "./UseEffectBasic";
 import UseContextExample from "./XUseContextExample";
 import Counter from "./ReducerExample"
 import RefExample from "./RefExample"
+import UseCallback from "./UseCallbackExample";
 
 function App() {
   return (
     <div>
-      <RefExample />
+      <UseCallback />
     </div>
   );
 }
