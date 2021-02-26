@@ -6,11 +6,12 @@ import UseContextExample from "./XUseContextExample";
 import Counter from "./ReducerExample"
 import RefExample from "./RefExample"
 import UseCallback from "./UseCallbackExample";
+import Sync from './SyncExample'
 
 function App() {
   return (
     <div>
-      <UseCallback />
+      <Sync />
     </div>
   );
 }
